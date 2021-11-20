@@ -81,6 +81,16 @@ export default {
       };
 
       /*
+        let outsideEmterpeiseInfo = {
+          oeInfo: oeInfoSelection.map(item => ({
+            oeIDNEW:item.oeiId,
+            oeCodeNEW:item.oeiCode,
+            oeNameNEW:item.oeiName
+          }))
+        };
+      */
+
+      /*
       * 判断row.length与1的关系是不相等的.
       * 当第一次点击表格的选中框时, row.length !== 1是false, 因为现在选中的就是一行数据, row.length就是1. 而判断的row.length不是1, 所以输出false
       * */
