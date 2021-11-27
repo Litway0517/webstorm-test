@@ -102,7 +102,8 @@ export default {
       * */
       console.log("this.multiple -> ", !row.length);
 
-      console.log("userNewsDate：", oeInfoSelection)
+      console.log("userNewsDate：", oeInfoSelection);
+      console.log("测试");
     }
   }
 }
