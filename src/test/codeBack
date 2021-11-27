@@ -1,0 +1,84 @@
+this.collectMaterialInfo = {
+          materialInfo: newAddMtlInfoSelection.map(item => ({
+                oeiId: item.oeiId,
+                oeiCode: item.oeiCode,
+                oeiName: item.oeiName,
+          }))
+      };
+
+
+
+let outsideEnterpeiseInfo = {
+        oeInfo: oeInfoSelection.map(item => ({
+          oeiId:item.oeiId,
+          oeiCode:item.oeiCode,
+          oeiName:item.oeiName,
+        }))
+      };
+      console.log("outsideEnterpeiseInfo -> ",outsideEnterpeiseInfo);
+
+
+
+
+
+
+      获取用户最后选中的一条项目
+      var tempCollector = [];
+      var maxIndex = oeInfoSelection.length - 1;
+      tempCollector.push(oeInfoSelection[maxIndex]);
+      console.log("tempInfo -> ", tempCollector);
+
+      if (tempCollector[0] != undefined) {
+          if ((this.collectOEInfo.length == 0) && (tempCollector[0] != undefined)) {
+            this.collectOEInfo.push(tempCollector[0]);
+            console.log("collectOEInfo -> ", this.collectOEInfo.length);
+          } else {
+              for(let i = 0; i < this.collectOEInfo.length; i++) {
+                  if(tempCollector[0].oeiId == this.collectOEInfo[i].oeiId) {
+                      break;
+                  };
+
+              };
+              this.collectOEInfo.push(tempCollector[0]);
+              console.log("collectOEInfo数据 -> ", this.collectOEInfo);
+          };
+      };
+
+
+
+      if (oeInfoSelection.length == 0) {
+        console.log("没有选中的元素, oeInfo为undefined -> ", oeInfoSelection);
+      } else {
+        if (this.collectOEInfo.length == 0 && oeInfoSelection.length == 1) {
+            this.collectOEInfo.push(oeInfoSelection[0]);
+          } else {
+            for(let i = 1; i < oeInfoSelection.length; i++) {
+                for(let j = 0; j < this.collectOEInfo.length; j++) {
+                    if (oeInfoSelection[i].oeiId == this.collectOEInfo[j].oeiId) {
+                      console.log("已经存在 -> ", oeInfoSelection[i].oeiId, " 这条公司的信息了");
+                    } else {
+                      this.collectOEInfo.push(oeInfoSelection[i]);
+                    };
+                  };
+            };
+        };
+      };
+
+      console.log("最新的collectOeAndMaterialInfo -> ", this.collectOEInfo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
