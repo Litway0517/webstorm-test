@@ -1,5 +1,6 @@
 <template>
-
+  <el-button>确定</el-button>
+  <el-button>取消</el-button>
 </template>
 
 <script>
