@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h2>简单测试1</h2>
+    <hr>
+    <p id="content" >请等三秒钟</p>
+    <script>
+        setTimeout(() =>  {
+            let content=document.getElementById('content');
+            content.innerHTML="<div style='color:red'>我是三秒后显示的内容！</div>";
+        }, 2000);
+
+    </script>
+
+    <h2>简单测试2</h2>
+    <hr>
+    <input type="text" id="displayBox" name="displayBox" value="0">
+
+    <script>
+        x = 0
+        function countSecond()
+        {
+            x = x+1
+            document.getElementById("displayBox").value=x
+            setTimeout("countSecond()", 1000)
+        }
+        // 执行函数
+        countSecond()
+    </script>
+
+</body>
+</html>
