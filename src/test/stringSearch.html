@@ -15,7 +15,11 @@
         let index = array.filter(item => {
             return item.indexOf('集团') > -1;
         });
-        console.log(index)
+        console.log(index);
+
+        // 注意: indexOf是对一个字符串内部进行搜索, 而不是说在数组中进行搜索. 方法的特性别用错了
+        let number = array[1].indexOf('集团');
+        console.log(number)
 
 
     </script>
